@@ -20,9 +20,10 @@
         @include('components.sidebar')
 
         <!-- Main Content Area -->
+         
         <div class="col-md-10 mt-4">
             <div class="row g-4 justify-content-center px-4">
-
+            <h1>Welcome,  {{ $username }}!</h1>
                 <!-- First Row: 2 Columns -->
                 <div class="col-md-6 col-sm-12 mb-4">
                     <a href="form">

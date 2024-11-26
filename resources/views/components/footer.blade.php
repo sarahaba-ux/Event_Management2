@@ -1,23 +1,83 @@
-<!-- Footer Section -->
-<footer class="footer mt-auto p-3 text-center" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), rgba(255, 105, 180, 0.5);">
-    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
-        <!-- Centered content -->
-        <span>© 2024 Event Management</span>
+<footer class="footer">
+    <div class="container py-5">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-3">About Eventify</h5>
+                <p>Eventify is your go-to platform for seamless event planning. Whether it's a wedding, party, or corporate gathering, we help turn your dreams into reality.</p>
+            </div>
+            <!-- Quick Links Section -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-3">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{{ route('homepage') }}" class="text-light">Home</a></li>
+                    <li><a href="event_details.php" class="text-light">Event Details</a></li>
+                    <li><a href="attendees.php" class="text-light">Attendees</a></li>
+                    <li><a href="contact_us.php" class="text-light">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Social Media Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-3">Follow Us</h5>
+                <div>
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <!-- Contact Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-uppercase mb-3">Contact Us</h5>
+                <p><i class="fas fa-envelope"></i> support@eventify.com</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Eventify St, New York, NY</p>
+            </div>
+        </div>
+        <hr class="my-4 text-light">
+        <div class="text-center">
+            <p class="mb-0">© 2024 Eventify. All Rights Reserved.</p>
+        </div>
     </div>
 </footer>
 
 <style>
-    /* Optional: Additional styling for the footer */
     .footer {
-        color: #fff; /* White text for contrast */
-        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow above the footer */
-        display: flex;
-        justify-content: center; /* Center the content horizontally */
-        align-items: center; /* Center the content vertically */
-      
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
+        color: #ffffff;
+        margin-top: auto;  /* Ensures footer is pushed to the bottom */
     }
 
-    .footer .text-muted {
-        font-size: 0.9rem; /* Slightly smaller text for the footer */
+    .footer h5 {
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .footer a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+        color: #ff69b4;
+    }
+
+    .footer p {
+        margin-bottom: 0.5rem;
+    }
+
+    .footer hr {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer .fab, .footer .fas {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+
+    .footer .fab:hover, .footer .fas:hover {
+        transform: scale(1.2);
+        color: #ff69b4;
     }
 </style>

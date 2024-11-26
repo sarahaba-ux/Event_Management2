@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Management: Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style_wedding.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-</head>
-<body>
+@extends('components.layout') 
 
-<!-- Burger Icon to toggle sidebar -->
-<div class="burger-icon" id="burgerMenu">&#9776;</div>
-
-  <!-- Sidebar -->
-  @include('components.navbar')
-
-<!-- FORM -->
+@section('content')
 <div class="content-container" id="mainContent">
     <!-- Icon added outside the form, top-right of the form -->
-    <a href="#" class="top-right-icon">
-        <i class="fas fa-home"></i> <!-- Replace with any icon you prefer -->
-    </a>
 
     <div class="container-box col-md-5 col-sm-12">
         <h2 class="mb-4 text-center">Create Your Title</h2>
@@ -54,21 +35,5 @@
     </div>
 </div>
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Script to toggle sidebar visibility -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var burgerMenu = document.getElementById('burgerMenu');
-        var sidebarMenu = document.getElementById('sidebarMenu');
-
-        burgerMenu.addEventListener('click', function() {
-            sidebarMenu.classList.toggle('sidebar-active');
-            document.getElementById('mainContent').classList.toggle('sidebar-active');
-        });
-    });
-</script>
-
-</body>
-</html>
+@include('components.footer')
+@endsection

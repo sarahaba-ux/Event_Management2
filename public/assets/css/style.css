@@ -4,12 +4,12 @@ body {
     background-size: cover; /* Cover the entire screen */
     position: relative;
     min-height: 100vh;
-    font-family: 'Dancing Script', cursive, Arial, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Heading Styles */
 h1, h2, h3 {
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;  /* Serif font for headings */
+  font-family: Arial, Helvetica, sans-serif;
     color: rgba(83, 5, 28, 0.658); /* Elegant dark color */
 }
 
@@ -18,7 +18,7 @@ h1, h2, h3 {
     background: linear-gradient(135deg, rgba(255, 105, 180, 1) 0%, rgba(255, 182, 193, 1) 100%); /* Button gradient */
     border: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    font-family: 'Dancing Script', cursive, Arial, sans-serif;  /* Elegant font */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-primary:hover {

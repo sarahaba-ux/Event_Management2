@@ -21,12 +21,12 @@ class HomeController extends Controller
             [
                 'title' => 'Birthday',
                 'description' => 'Celebrate with an unforgettable birthday party.',
-                'image' => asset('assets/images/baptism.jpg')
+                'image' => asset('assets/images/birthday.jpg')
             ],
             [
                 'title' => 'Graduation',
                 'description' => 'Make your graduation day special.',
-                'image' => asset('assets/images/birthday.jpg')
+                'image' => asset('assets/images/card_graduation.png')
             ],
             
         ];

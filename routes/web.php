@@ -15,19 +15,12 @@ Route::get('/', function () {
 // Login actions for admin and organizer
 Route::post('/user/admin', [RoleController::class, 'adminLogin'])->name('login.admin');
 Route::post('/user/organizer', [RoleController::class, 'organizerLogin'])->name('login.organizer');
+// checks credentials provided in the request (username and password). user is redirected to /home with their username stored in the session; otherwise, they are sent to an error page.
 
 // Error Page Route
 Route::get('/error', function () {
     return view('error');
 })->name('error.page');
-
-// Organizer Dashboard Routes
-Route::get('/user/organizer', function () {
-    return view('organizer_dashboard'); // Public view for guests
-})->name('organizer.dashboard')->middleware('guest');
-
-// Authenticated Organizer Landing Page
-Route::get('/user/organizer/dashboard', [HomeController::class, 'home'])->middleware('auth');
 
 // Some route with custom middleware for login error
 Route::get('/some-route', [SomeController::class, 'someMethod'])->middleware('check.login.error');

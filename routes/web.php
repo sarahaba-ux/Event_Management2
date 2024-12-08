@@ -28,14 +28,8 @@ Route::get('/error', function () {
 // Some route with custom middleware for login error
 Route::get('/some-route', [SomeController::class, 'someMethod'])->middleware('check.login.error');
 
-// Route for creating an event
-Route::post('/event/create', [EventController::class, 'create'])->name('event.create');
+use App\Http\Controllers\EventController;
 
-// Route for displaying the RSVP form
-Route::get('/event/rsvp/{id}', [RSVPController::class, 'show'])->name('event.rsvp');
-
-// Route for storing the RSVP data
-Route::post('/event/rsvp', [RSVPController::class, 'store'])->name('rsvp.store');
-
-// Route for displaying attendees of an event
-Route::get('/event/attendees/{id}', [EventController::class, 'attendees'])->name('event.attendees');
+Route::get('/events', [EventController::class, 'list'])->name('event.list');
+Route::post('/events/create', [EventController::class, 'create'])->name('event.create');
+Route::get('/events/{id}/rsvp', [EventController::class, 'show'])->name('event.rsvp');

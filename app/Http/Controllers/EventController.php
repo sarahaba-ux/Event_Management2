@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    // Create a new event
     public function create(Request $request)
     {
+        // Validate input data
         $validated = $request->validate([
             'name' => 'required',
             'location' => 'required',
@@ -17,17 +17,44 @@ class EventController extends Controller
             'event_url' => 'required|url',
         ]);
 
-        $event = Event::create($validated);
+        // Generate a unique event URL
+        $eventURL = route('event.rsvp', ['id' => uniqid()]);  // You can replace this with a more specific URL pattern.
 
-        return redirect()->back()->with('success', 'Event created successfully!');
+        // Create the event in the database
+        $event = Event::create([
+            'name' => $validated['name'],
+            'location' => $validated['location'],
+            'event_date' => $validated['event_date'],
+            'event_time' => $validated['event_time'],
+            'event_url' => $eventURL,
+        ]);
+
+        // Redirect to the event list page with success message
+        return redirect()->route('event.list')->with('success', 'Event created successfully!');
     }
 
-    // Display attendees of an event
-    public function attendees($id)
+    public function list()
+    {
+        $events = Event::all();
+        return view('event_list', compact('events'));
+    }
+
+    public function show($id)
     {
         $event = Event::findOrFail($id);
-        $attendees = Attendee::where('event_id', $id)->get();
-
-        return view('attendees', compact('event', 'attendees'));
+        return view('event_details', compact('event'));
     }
+    public function rsvp(Request $request, $id)
+{
+    $event = Event::findOrFail($id);
+
+    // Save the RSVP response (you could save it in a separate table if needed)
+    // For simplicity, we're just storing the RSVP response directly in the Event model.
+    $event->rsvp = $request->input('rsvp');
+    $event->save();
+
+    // Redirect to the event list page with a success message
+    return redirect()->route('event.list')->with('success', 'Your RSVP has been submitted!');
+}
+
 }

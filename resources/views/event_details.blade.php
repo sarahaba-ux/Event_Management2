@@ -8,8 +8,13 @@
     <p><strong>Time:</strong> {{ $event->event_time }}</p>
     <p><strong>Event URL:</strong> <a href="{{ $event->event_url }}" target="_blank">{{ $event->event_url }}</a></p>
 
+    <!-- RSVP Form -->
     <form action="{{ route('event.rsvp', $event->id) }}" method="POST">
         @csrf
+        <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
         <div class="form-group">
             <label for="rsvp">Will you attend this event?</label>
             <select name="rsvp" id="rsvp" class="form-control" required>

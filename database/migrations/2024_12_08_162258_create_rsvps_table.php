@@ -11,22 +11,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('rsvps', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('location');
-            $table->date('event_date');
-            $table->time('event_time');
-            $table->string('event_url');
+            $table->foreignId('event_id')->constrained('events');  // foreign key to the events table
+            $table->string('name');  // Name of the person attending
+            $table->string('rsvp');  // RSVP status (yes/no)
             $table->timestamps();
         });
     }
+    
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('rsvps');
     }
 };

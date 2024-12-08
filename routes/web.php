@@ -30,6 +30,6 @@ Route::get('/some-route', [SomeController::class, 'someMethod'])->middleware('ch
 
 use App\Http\Controllers\EventController;
 
-Route::get('/events', [EventController::class, 'list'])->name('event.list');
-Route::post('/events/create', [EventController::class, 'create'])->name('event.create');
 Route::get('/events/{id}/rsvp', [EventController::class, 'show'])->name('event.rsvp');
+Route::post('/events/{id}/rsvp', [EventController::class, 'rsvp']);
+Route::get('/events/{id}/attendees', [EventController::class, 'attendees'])->name('event.attendees');

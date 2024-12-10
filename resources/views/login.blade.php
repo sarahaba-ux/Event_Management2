@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -27,7 +27,7 @@
             max-width: 800px;
         }
 
-        .registration-container {
+        .login-container {
             background-color: #fff;
             padding: 40px;
             border-radius: 10px;
@@ -50,9 +50,9 @@
         </div>
     @endif
 
-    <div class="registration-container">
-        <h2 class="text-center">Register as Admin or Organizer</h2>
-        <form id="registrationForm" method="POST" action="{{ route('register.submit') }}">
+    <div class="login-container">
+        <h2 class="text-center">Login</h2>
+        <form method="POST" action="{{ route('login.submit') }}">
             @csrf
             <div class="mb-3">
                 <label for="role" class="form-label">Select Role</label>
@@ -66,40 +66,33 @@
             <!-- Admin Fields -->
             <div id="adminFields" style="display: none;">
                 <div class="mb-3">
-                    <label for="adminUsername" class="form-label">Admin Username</label>
-                    <input type="text" class="form-control" id="adminUsername" name="admin_username">
+                    <label for="admin_username" class="form-label">Admin Username</label>
+                    <input type="text" class="form-control" id="admin_username" name="admin_username">
                 </div>
                 <div class="mb-3">
-                    <label for="adminKey" class="form-label">Admin Unique Key</label>
-                    <input type="text" class="form-control" id="adminKey" name="admin_key">
+                    <label for="admin_key" class="form-label">Admin Unique Key</label>
+                    <input type="text" class="form-control" id="admin_key" name="admin_key">
                 </div>
                 <div class="mb-3">
-                    <label for="adminPassword" class="form-label">Admin Password</label>
-                    <input type="password" class="form-control" id="adminPassword" name="admin_password">
+                    <label for="admin_password" class="form-label">Admin Password</label>
+                    <input type="password" class="form-control" id="admin_password" name="admin_password">
                 </div>
             </div>
 
             <!-- Organizer Fields -->
             <div id="organizerFields" style="display: none;">
                 <div class="mb-3">
-                    <label for="organizerFullName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="organizerFullName" name="organizer_fullname">
+                    <label for="organizer_username" class="form-label">Organizer Username</label>
+                    <input type="text" class="form-control" id="organizer_username" name="organizer_username">
                 </div>
                 <div class="mb-3">
-                    <label for="organizerPhone" class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" id="organizerPhone" name="organizer_phone">
-                </div>
-                <div class="mb-3">
-                    <label for="organizerUsername" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="organizerUsername" name="organizer_username">
-                </div>
-                <div class="mb-3">
-                    <label for="organizerPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="organizerPassword" name="organizer_password">
+                    <label for="organizer_password" class="form-label">Organizer Password</label>
+                    <input type="password" class="form-control" id="organizer_password" name="organizer_password">
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Register</button>
+
+            <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
 

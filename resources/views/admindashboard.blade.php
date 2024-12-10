@@ -5,7 +5,7 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>Welcome, {{ $username }}!</h1>
+    <h1>Welcome!</h1>
     <p>You have successfully logged in as an Admin.</p>
 </body>
 </html>
